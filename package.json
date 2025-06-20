@@ -1,0 +1,16 @@
+{
+  "name": "ai_solicitud_de_capacitaciones_2025",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Fredy Romero <romeroespinoza.fp@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.99"
+  }
+}
