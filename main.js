@@ -31,8 +31,8 @@ const emailOnFormSubmit = (e) => {
 
   const FULL_TITLE = (userResponse.service == "Capacitación") ? userResponse.title + " / " + userResponse.datetime : "Inducción / " + userResponse.datetime;
   const MEET_URL = lookURL(FULL_TITLE, 1, 1, 1, 2);
-  const DESCRIPTION = `<hr><p>${(userResponse.service == "Capacitación") ? `Sesión: <strong>${title}</strong>` : 'Inducción'} </p>
-<p>Fecha: <strong>${userResponse.datetime.split(", ")[0] + userResponse.datetime.split(", ")[1]}</strong></p>
+  const DESCRIPTION = `<p>Título: <strong>${(userResponse.service == "Capacitación") ? userResponse.title : 'Inducción'}</strong></p>
+<p>Fecha: <strong>${userResponse.datetime.split(", ")[0] + ", " + userResponse.datetime.split(", ")[1]}</strong></p>
 <p>Hora: <strong>${userResponse.datetime.split(", ")[2]}</strong></p>
 <p>Tipo de sesión: <strong>Virtual</strong></p>
 <p>Enlace de acceso: <strong>${MEET_URL}</strong></p>
@@ -60,7 +60,7 @@ Cualquier consulta por favor no dudes en escribirnos a: capacitacioneshub@contin
 
   // emailTemplate obtiene la plantilla HTML con formato.
   const emailTemplate = HtmlService.createTemplateFromFile("emailTemplate");
-  emailTemplate.fulllname = userResponse.fullname;
+  emailTemplate.fullname = userResponse.fullname;
   emailTemplate.description = DESCRIPTION;
   const htmlBody = emailTemplate.evaluate().getContent();
 
